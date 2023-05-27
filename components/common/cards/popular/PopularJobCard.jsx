@@ -14,7 +14,8 @@ const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
             uri:
               item.employer_logo != null
                 ? item.employer_logo
-                : "https://careers.beirutdigitaldistrict.com/media/cache/employers_list/uploads/images/d3c12071f5844322a6fd0bfd5b07923b.png"}}
+                : "https://api.logo.com/api/v2/images?logo=logo_20ddb280-003c-4d7b-816a-46942239b73e&format=webp&margins=0&quality=60&width=500&background=transparent&u=1685183699",
+          }}
           resizeMode="contain"
           style={styles.logoImage}
         />
