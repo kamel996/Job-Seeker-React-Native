@@ -42,10 +42,8 @@ const JobDetails = () => {
         );
       case "About":
         return (
-          <JobAbout 
-          info={data[0].job_description ?? "No data provided"}
-          />
-        )
+          <JobAbout info={data[0].job_description ?? "No data provided"} />
+        );
       case "Responsibilities":
         return (
           <Specifics
@@ -57,7 +55,11 @@ const JobDetails = () => {
         break;
     }
   };
-  const onRefresh = () => {};
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    refetch();
+    setRefreshing(false);
+  }, []);
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
@@ -112,7 +114,12 @@ const JobDetails = () => {
             </View>
           )}
         </ScrollView>
-        <JobFooter url={data[0]?.job_google_link ?? 'https://careers.google.com/jobs/results'} />
+        <JobFooter
+          url={
+            data[0]?.job_google_link ??
+            "https://careers.google.com/jobs/results"
+          }
+        />
       </>
     </SafeAreaView>
   );
