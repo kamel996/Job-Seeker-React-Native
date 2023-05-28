@@ -9,13 +9,14 @@ const TabButton = ({ name, activeTab, onHandleSearchType }) => {
       style={styles.btn(name, activeTab)}
       onPress={onHandleSearchType}
     >
-      <Text style={styles.btn(name, activeTab)}>{name}</Text>
+      <Text style={styles.btn(activeTab, name)}>
+        <Text style={{ color: "white" }}>{name}</Text>
+      </Text>
     </TouchableOpacity>
   );
 };
 
 const Tabs = ({ tabs, activeTab, setActiveTab }) => {
-  console.log(tabs, "im tabbs");
   return (
     <View style={styles.container}>
       <FlatList

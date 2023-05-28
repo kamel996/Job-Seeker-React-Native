@@ -30,7 +30,6 @@ const JobDetails = () => {
   });
   const [refreshing, setRefreshing] = useState(false);
   const [activeTab, setActiveTab] = useState(tabs[0]);
-  console.log(data);
   const displayTabContent = () => {
     switch (activeTab) {
       case "Qualifications":
